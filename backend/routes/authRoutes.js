@@ -7,13 +7,20 @@ const router = express.Router();
 router.post('/register', async (req, res) => {
   const { username, email, password } = req.body;
   try {
+    console.log("hiiiiiii");
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({ username, email, password: hashedPassword });
-    res.json(user);
+    
+    // Generate JWT token
+    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '5h' });
+    
+    // Send back the token and user details
+    res.json({ user, token });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
+
 
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
