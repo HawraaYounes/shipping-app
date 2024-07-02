@@ -4,11 +4,15 @@ const { sequelize } = require('./models');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/authRoutes');
 const shipmentRoutes = require('./routes/shipmentRoutes');
+const cors = require('cors'); // Import the cors middleware
 
 dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
+
+// Enable all CORS requests
+app.use(cors());
 
 // Use the auth routes
 app.use('/auth', authRoutes);
