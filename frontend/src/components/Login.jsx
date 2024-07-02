@@ -16,7 +16,8 @@ const Login = () => {
       localStorage.setItem('token', response.data.token);
       navigate('/dashboard'); // Navigate to dashboard after successful login
     } catch (error) {
-      setError(error.response);
+      setError('Invalid email or password'); // Set a generic error message for invalid credentials
+      console.error('Login Error:', error); // Log detailed error for debugging
     }
   };
 
