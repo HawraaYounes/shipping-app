@@ -1,13 +1,16 @@
+// src/components/ShipmentCard.js
 import React from 'react';
+import Button from './Button';
 
-const ShipmentCard = ({ shipment }) => {
+const ShipmentCard = ({ shipment, onEdit, onDelete }) => {
   return (
-    <div style={{ border: '1px solid #ccc', borderRadius: '5px', padding: '10px', margin: '10px', width: '300px' }}>
+    <div style={{ border: '1px solid black', margin: '10px', padding: '10px', width: '200px' }}>
       <p><strong>Waybill:</strong> {shipment.waybill}</p>
       <p><strong>Customer Name:</strong> {shipment.customerName}</p>
       <p><strong>Customer Address:</strong> {shipment.customerAddress}</p>
-      <p><strong>Customer Phone:</strong> {shipment.customerPhone}</p>
-      {/* Add more shipment details as needed */}
+      <p><strong>Customer Phone Number:</strong> {shipment.customerPhone}</p>
+      <Button onClick={onEdit}>Edit</Button>
+      <Button onClick={onDelete}>Delete</Button>
     </div>
   );
 };
