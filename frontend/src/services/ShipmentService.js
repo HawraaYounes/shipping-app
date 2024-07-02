@@ -1,31 +1,27 @@
 import axios from 'axios';
+import AuthService from './AuthService';
 
 const API_URL = 'http://localhost:5000/api';
 
 const ShipmentService = {
   getAllShipments: async () => {
-    const response = await axios.get(`${API_URL}/shipments`);
-    return response.data;
-  },
-
-  getShipmentById: async (id) => {
-    const response = await axios.get(`${API_URL}/shipments/${id}`);
-    return response.data;
+    const headers = AuthService.getAuthHeader();
+    return await axios.get(`${API_URL}/shipments`, { headers });
   },
 
   createShipment: async (shipmentData) => {
-    const response = await axios.post(`${API_URL}/shipments`, shipmentData);
-    return response.data;
+    const headers = AuthService.getAuthHeader();
+    return await axios.post(`${API_URL}/shipments`, shipmentData, { headers });
   },
 
   updateShipment: async (id, shipmentData) => {
-    const response = await axios.put(`${API_URL}/shipments/${id}`, shipmentData);
-    return response.data;
+    const headers = AuthService.getAuthHeader();
+    return await axios.put(`${API_URL}/shipments/${id}`, shipmentData, { headers });
   },
 
   deleteShipment: async (id) => {
-    const response = await axios.delete(`${API_URL}/shipments/${id}`);
-    return response.data;
+    const headers = AuthService.getAuthHeader();
+    return await axios.delete(`${API_URL}/shipments/${id}`, { headers });
   },
 };
 

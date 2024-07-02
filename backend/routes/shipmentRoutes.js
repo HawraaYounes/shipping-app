@@ -4,21 +4,33 @@ const express = require('express');
 const router = express.Router();
 
 const authenticate = async (req, res, next) => {
-  const token = req.header('Authorization').replace('Bearer ', '');
   try {
+    // Check if Authorization header exists
+    const authHeader = req.header('Authorization');
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      throw new Error('Authorization header is missing or invalid');
+    }
+
+    // Extract token from Authorization header
+    const token = authHeader.replace('Bearer ', '');
     
+    // Verify and decode JWT token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    // Find user based on decoded token
     req.user = await User.findByPk(decoded.id);
     if (!req.user) {
-      throw new Error();
+      throw new Error('User not found');
     }
+
+    // Continue to the next middleware or route handler
     next();
   } catch (error) {
+    // Handle authentication errors
+    console.error('Authentication error:', error);
     res.status(401).json({ error: 'Please authenticate.' });
   }
 };
-
-
 router.post('/shipments', authenticate, async (req, res) => {
   try {
     const shipment = await Shipment.create({ ...req.body, userId: req.user.id });
