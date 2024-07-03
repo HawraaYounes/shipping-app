@@ -18,6 +18,10 @@
   scroll-behavior: smooth;
 }
 
+.text-yellow{
+  color:#DCED31;
+}
+
 .text-gradient {
   background: radial-gradient(
     64.18% 64.18% at 71.16% 35.69%,
@@ -25,8 +29,8 @@
     #f8fdc4 17.23%,
     #f7fdb1 42.04%,
     #f6fda6 55.12%,
-    #f4ff76 71.54%,
-    #DCED31 100%
+    #e5f34a 71.54%,
+    #ebfd26 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -41,7 +45,7 @@
     #f8fdc4 12.19%,
     #f7fdb1 12.19%,
     #f6fda6 29.82%,
-    #f4ff76 51.94%,
+    #e5f34a 51.94%,
     #DCED31 90.29%
   );
 }

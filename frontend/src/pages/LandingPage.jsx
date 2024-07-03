@@ -5,7 +5,7 @@ import styles from "../style";
 import Stats from "../sections/Stats";
 import Business from "../sections/Business";
 import Billing from "../sections/Billing";
-
+import Footer from "../services/Footer";
 
 const LandingPage = () => {
   return (
@@ -23,9 +23,10 @@ const LandingPage = () => {
         </div>
         <div className={`${styles.paddingX} ${styles.flexCenter}`}>
           <div className={`${styles.boxWidth}`}>
-            <Stats/>
-            <Business/>
-            <Billing/>
+            <Stats />
+            <Business />
+            <Billing />
+            <Footer />
           </div>
         </div>
       </div>
