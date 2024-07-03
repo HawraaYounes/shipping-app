@@ -134,7 +134,7 @@ const Dashboard = () => {
         <Input
           type="text"
           placeholder="Customer Phone Number"
-          value={shipmentData.customerPhoneNumber}
+          value={shipmentData.customerPhone}
           onChange={(e) =>
             setShipmentData({ ...shipmentData, customerPhone: e.target.value })
           }
@@ -155,12 +155,12 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="  w-full overflow-hidden bg-primary text-white h-screen">
+    <div className="w-full h-full overflow-hidden bg-primary text-white min-h-screen">
       <div className={`${styles.paddingX} `}>
-        <div className="w-full flex justify-end">
-        <Button onClick={() => openModal("create")}>Create Shipment</Button>
+        <div className="flex justify-end">
+          <Button onClick={() => openModal("create")}>Create Shipment</Button>
         </div>
-        <div className="flex flex-wrap justify-content">
+        <div className="justify-items-center grid grid-cols-1 ss:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 mt-4">
           {shipments.map((shipment) => (
             <ShipmentCard
               key={shipment.id}

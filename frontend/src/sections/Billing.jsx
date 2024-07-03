@@ -18,14 +18,15 @@ const Billing = () => (
 
     <div className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
-        Easily control your <br className="sm:block hidden" /> billing &
-        invoicing
+      Transparent and Convenient Billing
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        Our billing system is designed to be straightforward and transparent.
-        You'll receive clear invoices detailing costs and charges, ensuring you
-        always know what to expect. Whether it's one-time shipments or recurring
-        deliveries, managing your expenses with us is hassle-free.
+        Our billing process is designed to be straightforward and user-friendly.
+        We provide clear and detailed invoices for every transaction, ensuring
+        transparency and enabling you to manage your shipping expenses
+        efficiently. Whether you're handling occasional shipments or managing
+        regular deliveries, our billing system simplifies the process, allowing
+        you to focus on your core business operations.
       </p>
 
       <div className="flex flex-row flex-wrap sm:mt-10 mt-6">
