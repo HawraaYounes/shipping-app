@@ -93,7 +93,7 @@ const Dashboard = () => {
         <div>
           <p>Are you sure you want to delete this shipment?</p>
           <Button onClick={handleDeleteShipment}>Yes</Button>
-          <Button onClick={closeModal}>No</Button>
+          <Button onClick={closeModal} bgcolor="bg-transpaent border text-gradient">No</Button>
         </div>
       );
     }
