@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "../sections/Hero";
 import Navbar from "../components/Navbar";
 import styles from "../style";
+import Stats from "../sections/Stats";
 
 
 const LandingPage = () => {
@@ -19,7 +20,9 @@ const LandingPage = () => {
           </div>
         </div>
         <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-          <div className={`${styles.boxWidth}`}>Other sections clients cta</div>
+          <div className={`${styles.boxWidth}`}>
+            <Stats/>
+          </div>
         </div>
       </div>
     </>
