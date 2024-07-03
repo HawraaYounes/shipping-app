@@ -15,7 +15,7 @@ const Dashboard = () => {
     waybill: "",
     customerName: "",
     customerAddress: "",
-    customerPhone: "", // Adjusted to match the database field name
+    customerPhone: "", 
   });
 
   useEffect(() => {
@@ -69,14 +69,14 @@ const Dashboard = () => {
         waybill: shipment.waybill,
         customerName: shipment.customerName,
         customerAddress: shipment.customerAddress,
-        customerPhone: shipment.customerPhone, // Adjusted to match the database field name
+        customerPhone: shipment.customerPhone, 
       });
     } else {
       setShipmentData({
         waybill: "",
         customerName: "",
         customerAddress: "",
-        customerPhone: "", // Adjusted to match the database field name
+        customerPhone: "", 
       });
     }
     setIsModalOpen(true);
@@ -149,7 +149,7 @@ const Dashboard = () => {
     } else if (modalMode === "update") {
       return <Button onClick={handleUpdateShipment}>Update</Button>;
     } else if (modalMode === "delete") {
-      return null; // actions are already handled in renderModalContent for delete
+      return null; 
     }
   };
 

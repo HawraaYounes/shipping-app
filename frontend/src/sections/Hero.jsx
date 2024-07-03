@@ -6,7 +6,6 @@ import AuthService from "../services/AuthService";
 import { useNavigate } from "react-router-dom";
 import styles from "../style";
 import { discount, robot } from "../assets";
-// import GetStarted from "./GetStarted";
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,7 +33,7 @@ const Hero = () => {
     e.preventDefault();
     try {
       const response = await AuthService.login(email, password);
-      localStorage.setItem("token", response.token); // Storing the token
+      localStorage.setItem("token", response.token); 
       navigate("/dashboard");
       handleCloseModal();
     } catch (error) {
@@ -47,7 +46,7 @@ const Hero = () => {
     e.preventDefault();
     try {
       const response = await AuthService.register(username, email, password);
-      localStorage.setItem("token", response.token); // Storing the token
+      localStorage.setItem("token", response.token);
       navigate("/dashboard");
       handleCloseModal();
     } catch (error) {
