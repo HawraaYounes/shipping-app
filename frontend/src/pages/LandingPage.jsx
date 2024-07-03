@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import styles from "../style";
 import Stats from "../sections/Stats";
 import Business from "../sections/Business";
+import Billing from "../sections/Billing";
 
 
 const LandingPage = () => {
@@ -24,6 +25,7 @@ const LandingPage = () => {
           <div className={`${styles.boxWidth}`}>
             <Stats/>
             <Business/>
+            <Billing/>
           </div>
         </div>
       </div>
