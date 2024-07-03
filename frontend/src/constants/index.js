@@ -23,25 +23,26 @@ export const features = [
   {
     id: "feature-1",
     icon: star,
-    title: "Rewards",
+    title: "Fast Delivery",
     content:
-      "The best credit cards offer some tantalizing combinations of promotions and prizes",
+      "We ensure your packages are delivered swiftly and on time, every time.",
   },
   {
     id: "feature-2",
     icon: shield,
-    title: "100% Secured",
+    title: "Secure Handling",
     content:
-      "We take proactive steps make sure your information and transactions are secure.",
+      "Your shipments are handled with the utmost care and security, ensuring safe transit.",
   },
   {
     id: "feature-3",
     icon: send,
-    title: "Balance Transfer",
+    title: "Global Reach",
     content:
-      "A balance transfer credit card can save you a lot of money in interest charges.",
+      "Expand your business with our extensive network that covers international shipping destinations.",
   },
 ];
+
 
 export const feedback = [
   {
