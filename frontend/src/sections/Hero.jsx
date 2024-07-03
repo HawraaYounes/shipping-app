@@ -134,13 +134,12 @@ const Hero = () => {
         </div>
       </div>
       <div className={`flex md:flex-row flex-col sm:px-16  mt-3`}>
-        <Button onClick={() => handleOpenModal("login")} styles="mt-3">Login</Button>
-        <Button onClick={() => handleOpenModal("register")} styles="mt-3">Register</Button>
+        <Button onClick={() => handleOpenModal("login")} >Login</Button>
+        <Button onClick={() => handleOpenModal("register")}>Register</Button>
         <Modal
           isOpen={isModalOpen}
           onClose={handleCloseModal}
           title={modalContent === "login" ? "Login" : "Register"}
-          actions={<Button onClick={handleCloseModal}>Close</Button>}
         >
           {renderForm()}
         </Modal>
