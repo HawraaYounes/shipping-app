@@ -1,4 +1,3 @@
-// src/pages/Dashboard.js
 import React, { useEffect, useState } from "react";
 import ShipmentService from "../services/ShipmentService";
 import ShipmentCard from "../components/ShipmentCard";
@@ -16,7 +15,7 @@ const Dashboard = () => {
     waybill: "",
     customerName: "",
     customerAddress: "",
-    customerPhoneNumber: "",
+    customerPhone: "", // Adjusted to match the database field name
   });
 
   useEffect(() => {
@@ -70,14 +69,14 @@ const Dashboard = () => {
         waybill: shipment.waybill,
         customerName: shipment.customerName,
         customerAddress: shipment.customerAddress,
-        customerPhoneNumber: shipment.customerPhoneNumber,
+        customerPhone: shipment.customerPhone, // Adjusted to match the database field name
       });
     } else {
       setShipmentData({
         waybill: "",
         customerName: "",
         customerAddress: "",
-        customerPhoneNumber: "",
+        customerPhone: "", // Adjusted to match the database field name
       });
     }
     setIsModalOpen(true);
