@@ -154,7 +154,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="w-full h-full overflow-hidden bg-primary text-white min-h-screen">
+    <div className="w-full h-full overflow-hidden font-poppins bg-primary text-white min-h-screen">
       <div className={`${styles.paddingX} `}>
         <div className="flex justify-end">
           <Button onClick={() => openModal("create")}>Create Shipment</Button>
