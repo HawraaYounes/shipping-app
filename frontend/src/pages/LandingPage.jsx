@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "../sections/Hero";
 import Navbar from "../components/Navbar";
 import styles from "../style";
-// Import other sections as needed
+
 
 const LandingPage = () => {
   return (
