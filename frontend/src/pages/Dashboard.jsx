@@ -15,7 +15,7 @@ const Dashboard = () => {
     waybill: "",
     customerName: "",
     customerAddress: "",
-    customerPhone: "", 
+    customerPhone: "",
   });
 
   useEffect(() => {
@@ -69,14 +69,14 @@ const Dashboard = () => {
         waybill: shipment.waybill,
         customerName: shipment.customerName,
         customerAddress: shipment.customerAddress,
-        customerPhone: shipment.customerPhone, 
+        customerPhone: shipment.customerPhone,
       });
     } else {
       setShipmentData({
         waybill: "",
         customerName: "",
         customerAddress: "",
-        customerPhone: "", 
+        customerPhone: "",
       });
     }
     setIsModalOpen(true);
@@ -93,7 +93,9 @@ const Dashboard = () => {
         <div>
           <p>Are you sure you want to delete this shipment?</p>
           <Button onClick={handleDeleteShipment}>Yes</Button>
-          <Button onClick={closeModal} bgcolor="bg-transpaent border text-gradient">No</Button>
+          <Button onClick={closeModal} bgcolor="bg-transpaent border text-gradient">
+            No
+          </Button>
         </div>
       );
     }
@@ -149,7 +151,7 @@ const Dashboard = () => {
     } else if (modalMode === "update") {
       return <Button onClick={handleUpdateShipment}>Update</Button>;
     } else if (modalMode === "delete") {
-      return null; 
+      return null;
     }
   };
 
@@ -159,16 +161,22 @@ const Dashboard = () => {
         <div className="flex justify-end">
           <Button onClick={() => openModal("create")}>Create Shipment</Button>
         </div>
-        <div className="justify-items-center grid grid-cols-1 ss:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 mt-4">
-          {shipments.map((shipment) => (
-            <ShipmentCard
-              key={shipment.id}
-              shipment={shipment}
-              onEdit={() => openModal("update", shipment)}
-              onDelete={() => openModal("delete", shipment)}
-            />
-          ))}
-        </div>
+        {shipments.length === 0 ? (
+          <div className="flex items-center text-center justify-center mt-5 text-xl">
+            It appears there are no shipments recorded yet. Let's get started by creating some!
+          </div>
+        ) : (
+          <div className="items-center grid grid-cols-1 ss:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 mt-4">
+            {shipments.map((shipment) => (
+              <ShipmentCard
+                key={shipment.id}
+                shipment={shipment}
+                onEdit={() => openModal("update", shipment)}
+                onDelete={() => openModal("delete", shipment)}
+              />
+            ))}
+          </div>
+        )}
         <Modal
           isOpen={isModalOpen}
           onClose={closeModal}
