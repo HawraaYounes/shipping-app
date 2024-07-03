@@ -89,19 +89,19 @@ const Hero = () => {
   );
 
   return (
-    <>
-      <div>
-        <section
+    <section>
+     
+        <div
           id="home"
           className={`flex md:flex-row flex-col ${styles.paddingY}`}
         >
           <div
-            className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}
+            className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 `}
           >
             <div className="flex flex-row justify-between items-center w-full">
               <h1 className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] text-white ss:leading-[100.8px] leading-[75px]">
-                Fast Shipping With <br className="sm:block hidden" />{" "}
-                <span className="text-gradient">Quality</span>{" "}
+                Fast Shipping  <br className="sm:block hidden" />{" "}
+                <span className="text-gradient"> With Quality</span>{" "}
               </h1>
               {/* <div className="ss:flex hidden md:mr-4 mr-0">
             <GetStarted />
@@ -134,11 +134,10 @@ const Hero = () => {
             {/* gradient end */}
           </div>
 
-          {/* <div className={`ss:hidden ${styles.flexCenter}`}>
-        <GetStarted />
-      </div> */}
-        </section>
+
+        </div>
         {/* ------------------------------------------------------------ */}
+        <div className={`flex md:flex-row flex-col ${styles.paddingY} xl:px-0 sm:px-16 px-6 `}>
         <Button onClick={() => handleOpenModal("login")}>Login</Button>
         <Button onClick={() => handleOpenModal("register")}>Register</Button>
         <Modal
@@ -149,8 +148,8 @@ const Hero = () => {
         >
           {renderForm()}
         </Modal>
-      </div>
-    </>
+     </div>
+    </section>
   );
 };
 
