@@ -21,7 +21,7 @@ This project is a shipping application built using ReactJS for the frontend and 
 
 - **Frontend**:
   - **ReactJS**: Used for building the frontend components and managing state.
-  - **CSS**: Custom styling for the app interface.
+  - **Tailwind CSS**: Utilized for styling the app interface.
 - **Backend**:
   - **NodeJS**: Used for the backend server.
   - **Sequelize ORM**: Used for database interactions.
@@ -44,7 +44,6 @@ This project is a shipping application built using ReactJS for the frontend and 
 2. Install dependencies: `npm install`
 3. Start the development server: `npm start`
 4. Open your browser and visit `http://localhost:3000` to view the app.
-
 
 ## Contact
 
